@@ -9,3 +9,12 @@ fn test_gutter_game() {
     }
     assert_eq!(0, g.score());
 }
+
+#[test]
+fn test_all_ones() {
+    let mut g = Game::new();
+    for i in 0..20 {
+        g.roll(1);
+    }
+    assert_eq!(20, g.score());
+}

@@ -1,15 +1,17 @@
 pub struct Game {
+    score : u16
 }
 
 impl Game {
     pub fn new() -> Game {
-        Game { }
+        Game { score: 0 }
     }
 
-    pub fn roll(&mut self, pins : u8) {
+    pub fn roll(&mut self, pins : u16) {
+        self.score += pins;
     }
 
     pub fn score(&mut self) -> u16 {
-        0
+        self.score
     }
 }

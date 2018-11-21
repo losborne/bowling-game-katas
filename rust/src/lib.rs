@@ -6,6 +6,6 @@ impl Game {
         Game { }
     }
 
-    pub fn roll(&mut self, i : i32) { 
+    pub fn roll(&mut self, pins : u8) {
     }
 }

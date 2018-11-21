@@ -1,0 +1,7 @@
+[package]
+name = "bowling_game_rust"
+version = "0.1.0"
+authors = ["Luke Osborne <lukewosborne@gmail.com>"]
+edition = "2018"
+
+[dependencies]

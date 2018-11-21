@@ -7,4 +7,5 @@ fn test_gutter_game() {
     for i in 0..20 {
         g.roll(0);
     }
+    assert_eq!(0, g.score());
 }

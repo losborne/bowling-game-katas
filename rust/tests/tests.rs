@@ -27,9 +27,10 @@ fn test_one_spare() {
 #[test]
 fn test_one_strike() {
     let mut game = Game::new();
-    game.roll(10); // strike
+    roll_strike(&mut game);
     game.roll(3);
     game.roll(4);
+    roll_many(16, 0, &mut game);
     assert_eq!(24, game.score());
 }
 
@@ -37,6 +38,10 @@ fn roll_many(n : u16, pins : u16, game : &mut Game) {
     for i in 0..n {
         game.roll(pins);
     }
+}
+
+fn roll_strike(game : &mut Game) {
+    game.roll(10);
 }
 
 fn roll_spare(game : &mut Game) {

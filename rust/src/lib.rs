@@ -1,17 +1,23 @@
 pub struct Game {
-    score : u16
+    rolls : [u16; 21],
+    current_roll : usize
 }
 
 impl Game {
     pub fn new() -> Game {
-        Game { score: 0 }
+        Game { rolls: [0; 21], current_roll: 0 }
     }
 
     pub fn roll(&mut self, pins : u16) {
-        self.score += pins;
+        self.rolls[self.current_roll] = pins;
+        self.current_roll += 1;
     }
 
     pub fn score(&mut self) -> u16 {
-        self.score
+        let mut score = 0;
+        for i in 0..self.rolls.len() {
+            score += self.rolls[i]
+        }
+        score
     }
 }

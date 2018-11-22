@@ -34,6 +34,13 @@ fn test_one_strike() {
     assert_eq!(24, game.score());
 }
 
+#[test]
+fn test_perfect_game() {
+    let mut game = Game::new();
+    roll_many(12, 10, &mut game);
+    assert_eq!(300, game.score());
+}
+
 fn roll_many(n : u16, pins : u16, game : &mut Game) {
     for i in 0..n {
         game.roll(pins);

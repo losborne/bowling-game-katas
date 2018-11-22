@@ -16,14 +16,14 @@ fn test_all_ones() {
     assert_eq!(20, game.score());
 }
 
-// #[test]
-// fn test_one_spare() {
-//     let mut game = Game::new();
-//     game.roll(5);
-//     game.roll(5); // spare
-//     game.roll(3);
-//     assert_eq!(16, game.score());
-// }
+#[test]
+fn test_one_spare() {
+    let mut game = Game::new();
+    game.roll(5);
+    game.roll(5); // spare
+    game.roll(3);
+    assert_eq!(16, game.score());
+}
 
 fn roll_many(n : u16, pins : u16, game : &mut Game) {
     for i in 0..n {

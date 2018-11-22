@@ -51,5 +51,6 @@ Write a class that calculates the score of a bowling game that has two methods:
       for that game.
 
 ### References
-    * <http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata>
-    * <http://butunclebob.com/files/downloads/Bowling%20Game%20Kata.ppt>
+
+- <http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata>
+- <http://butunclebob.com/files/downloads/Bowling%20Game%20Kata.ppt>

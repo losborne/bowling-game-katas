@@ -15,8 +15,10 @@ impl Game {
 
     pub fn score(&mut self) -> u16 {
         let mut score = 0;
-        for i in 0..self.rolls.len() {
-            score += self.rolls[i]
+        let mut i = 0;
+        for frame in 0..10 {
+            score += self.rolls[i] + self.rolls[i+1];
+            i += 2;
         }
         score
     }

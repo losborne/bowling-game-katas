@@ -24,6 +24,15 @@ fn test_one_spare() {
     assert_eq!(16, game.score());
 }
 
+#[test]
+fn test_one_strike() {
+    let mut game = Game::new();
+    game.roll(10); // strike
+    game.roll(3);
+    game.roll(4);
+    assert_eq!(24, game.score());
+}
+
 fn roll_many(n : u16, pins : u16, game : &mut Game) {
     for i in 0..n {
         game.roll(pins);

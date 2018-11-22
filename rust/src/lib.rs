@@ -17,11 +17,16 @@ impl Game {
         let mut score = 0;
         let mut frame_index = 0;
         for frame in 0..10 {
-            score += self.rolls[frame_index] + self.rolls[frame_index+1];
-            if self.is_spare(frame_index) {
-                score += self.rolls[frame_index+2]
+            if self.rolls[frame_index] == 10 {
+                score += 10 + self.rolls[frame_index+1] + self.rolls[frame_index+2];
+                frame_index += 1;
+            } else if self.is_spare(frame_index) {
+                score += 10 + self.rolls[frame_index+2];
+                frame_index += 2;
+            } else {
+                score += self.rolls[frame_index] + self.rolls[frame_index+1];
+                frame_index += 2;
             }
-            frame_index += 2;
         }
         score
     }

@@ -15,15 +15,18 @@ impl Game {
 
     pub fn score(&mut self) -> u16 {
         let mut score = 0;
-        let mut i = 0;
+        let mut frame_index = 0;
         for frame in 0..10 {
-            score += self.rolls[i] + self.rolls[i+1];
-            if self.rolls[i] + self.rolls[i+1] == 10 {
-                // spare
-                score += self.rolls[i+2]
+            score += self.rolls[frame_index] + self.rolls[frame_index+1];
+            if self.is_spare(frame_index) {
+                score += self.rolls[frame_index+2]
             }
-            i += 2;
+            frame_index += 2;
         }
         score
+    }
+    
+    fn is_spare(&mut self, frame_index : usize) -> bool {
+        self.rolls[frame_index] + self.rolls[frame_index+1] == 10 
     }
 }

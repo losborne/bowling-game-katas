@@ -18,6 +18,10 @@ impl Game {
         let mut i = 0;
         for frame in 0..10 {
             score += self.rolls[i] + self.rolls[i+1];
+            if self.rolls[i] + self.rolls[i+1] == 10 {
+                // spare
+                score += self.rolls[i+2]
+            }
             i += 2;
         }
         score
